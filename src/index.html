@@ -10,10 +10,48 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root>Loading...</app-root>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Mogra" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+    p {
+      color: #777;
+      font-weight: 500;
+    }
   
+    .centered-load {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+      font-family: 'Mogra', cursive;
+    }
+  </style>
+
+  
+</head>
+<!-- <body class="grey lighten-4"> -->
+<body class="grey lighten-4">
+  <app-root>
+    <div class="centered-load">
+      <div class="preloader-wrapper active">
+        <div class="spinner-layer spinner-red-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </app-root>
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
